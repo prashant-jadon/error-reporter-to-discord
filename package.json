@@ -1,5 +1,5 @@
 {
-  "name": "error-reporter",
+  "name": "error-reporter-to-discord",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -23,10 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prashant-jadon/Error-Reporter.git"
+    "url": "git+https://github.com/prashant-jadon/error-reporter-to-discord.git"
   },
   "bugs": {
-    "url": "https://github.com/prashant-jadon/Error-Reporter/issues"
+    "url": "https://github.com/prashant-jadon/error-reporter-to-discord/issues"
   },
-  "homepage": "https://github.com/prashant-jadon/Error-Reporter#readme"
+  "homepage": "https://github.com/prashant-jadon/error-reporter-to-discord#readme"
 }

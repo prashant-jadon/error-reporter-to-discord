@@ -12,10 +12,10 @@ A simple Node.js service to report client-side errors to a Discord channel. This
 
 ## Installation
 
-To install the `error-reporter` package, run the following command in your project directory:
+To install the `error-reporter-to-discord` package, run the following command in your project directory:
 
 ```bash
-npm install error-reporter
+npm install error-reporter-to-discord
 ```
 
 ## Usage
@@ -24,10 +24,10 @@ To start using the error reporter in your application, follow these steps:
 
 1. **Import the Package:**
 
-   Import the `error-reporter` module in your application code:
+   Import the `error-reporter-to-discord` module in your application code:
 
    ```javascript
-   const startErrorReporter = require('error-reporter');
+   const startErrorReporter = require('error-reporter-to-discord');
    ```
 
 2. **Initialize the Reporter:**
@@ -47,7 +47,7 @@ To start using the error reporter in your application, follow these steps:
 ```javascript
 // Import necessary modules
 const express = require('express');
-const startErrorReporter = require('error-reporter');
+const startErrorReporter = require('error-reporter-to-discord');
 
 // Create an Express application
 const app = express();
@@ -95,27 +95,10 @@ app.use((err, req, res, next) => {
 
 ## Configuration Options
 
-The `error-reporter` package provides several configuration options to customize its behavior:
+The `error-reporter-to-discord` package provides several configuration options to customize its behavior:
 
 - **Custom Message Format:** Modify the format of error messages sent to Discord. For example, you can include user details, timestamps, and more.
   
 - **Error Filters:** Set up filters to exclude certain types of errors from being reported. This can help reduce noise from known issues.
 
 - **Rate Limiting:** Implement rate limiting to prevent your Discord channel from being spammed with error reports.
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request. Make sure to update tests as appropriate.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [Discord Webhooks Documentation](https://discord.com/developers/docs/resources/webhook)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-
-
-
-Feel free to modify any sections or add any additional features that your `error-reporter` service may include!
