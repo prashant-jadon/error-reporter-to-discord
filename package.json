@@ -1,0 +1,32 @@
+{
+  "name": "error-reporter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Prashant Jadon",
+  "license": "ISC",
+  "description": "A simple Node.js service to report client-side errors to a Discord channel. This package provides an easy way to log and monitor errors that occur in your application, making it easier to debug and resolve issues in real-time.",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "joi": "^17.13.3",
+    "node-fetch": "^3.3.2",
+    "supertest": "^7.0.0",
+    "winston": "^3.15.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashant-jadon/Error-Reporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prashant-jadon/Error-Reporter/issues"
+  },
+  "homepage": "https://github.com/prashant-jadon/Error-Reporter#readme"
+}
