@@ -45,52 +45,34 @@ To start using the error reporter in your application, follow these steps:
 ### Example: Basic Error Reporting
 
 ```javascript
-// Import necessary modules
-const express = require('express');
+
 const startErrorReporter = require('error-reporter-to-discord');
-
-// Create an Express application
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Initialize the error reporter
 startErrorReporter('YOUR_DISCORD_WEBHOOK_URL');
 
-// Sample route that throws an error
-app.get('/error', (req, res) => {
-    throw new Error('This is a test error!');
-});
-
-// Global error handling middleware
-app.use((err, req, res, next) => {
-    // Report the error to Discord
-    startErrorReporter.reportError(err);
-    res.status(500).send('Something went wrong!');
-});
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
 ```
+
+You will get endpoint /report-error use that in your code
 
 ### Example: Custom Error Handling
 
 You can customize how errors are reported by adding additional information such as user data or context. Here’s an example:
 
 ```javascript
-app.use((err, req, res, next) => {
-    const errorDetails = {
-        message: err.message,
-        stack: err.stack,
-        path: req.path,
-        user: req.user ? req.user.id : 'guest', // Example user data
-    };
-
-    // Report the error with additional context
-    startErrorReporter.reportError(errorDetails);
-    res.status(500).send('An error occurred. Please try again later.');
-});
+<script>
+ window.onerror = function (errorMessage, url, line, column, errorObj) {
+            fetch('http://localhost:3000/report-error', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    errorMessage,
+                    url,
+                    line,
+                    column,
+                    errorStack: errorObj ? errorObj.stack : null
+                })
+            }).catch((err) => console.error("Failed to report error:", err));
+        };
+</script>
 ```
 
 ## Configuration Options
@@ -102,3 +84,7 @@ The `error-reporter-to-discord` package provides several configuration options t
 - **Error Filters:** Set up filters to exclude certain types of errors from being reported. This can help reduce noise from known issues.
 
 - **Rate Limiting:** Implement rate limiting to prevent your Discord channel from being spammed with error reports.
+
+
+//TODO 
+//Integration with jira,github etc or custom assigment tool
